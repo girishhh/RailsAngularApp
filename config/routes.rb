@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  resources :articles
+  resources :articles do
+    collection do
+      post 'get_readability_score'
+    end
+  end
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+	require 'readability'	
+	include ActionView::Helpers::TextHelper
+	
 	skip_before_action :verify_authenticity_token
 	before_action :permit_params
 
@@ -12,10 +15,16 @@ class ArticlesController < ApplicationController
 		end
 	end
 
+	def get_readability_score		
+		striped_text = strip_tags(params[:text]).squish
+		readability_score = Readabilty.readabilty_score(striped_text)		
+		render json: {status: 200,data: readability_score}
+	end
+
 
 	private
 	 def permit_params
-	 	params.require(:article).permit!
+	 	params.require(:article).permit! if params[:article].present?
  	 end
 
 end

@@ -79,6 +79,8 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    odyssey (0.2.0)
+      require_all
     rack (2.0.1)
     rack-cors (0.4.1)
     rack-test (0.6.3)
@@ -108,6 +110,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
     rdoc (4.3.0)
+    require_all (1.4.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -155,6 +158,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  odyssey
   rack-cors
   rails (= 5.0)
   sass-rails (~> 5.0)
